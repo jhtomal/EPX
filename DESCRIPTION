@@ -1,0 +1,32 @@
+Package: epx
+Type: Package
+Title: Ensemble of Phalanxes
+Version: 1.0.0
+Authors@R: c(
+    person("Jabed", "Tomal", email = "jtomal@tru.ca", role = c("aut", "cre")),
+    person("Grace", "Hsu", email = "grace.hsu.ubc@gmail.com", role = c("aut")),
+    person("William", "Welch", email = "will@stat.ubc.ca", role = c("aut")))
+Maintainer: Jabed Tomal <jtomal@tru.ca>
+Description: An ensemble method for the statistical detection of
+    a rare class in two-class classification problems. The method uses an
+    ensemble of classifiers where the constituent
+    models of the ensemble use disjoint subsets (phalanxes) of explanatory
+    variables. We provide an implementation of the phalanx-formation algorithm.
+    Please see Tomal et al. (2015) for more details.
+License: GPL-3
+Encoding: UTF-8
+LazyData: TRUE
+Depends: R (>= 4.0.0)
+Imports:
+    foreach,
+    randomForest,
+    nnet,
+    doSNOW,
+    doRNG,
+    rngtools
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
