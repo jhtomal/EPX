@@ -44,11 +44,11 @@ See \link{hit.curve} in order to plot a hit curve in general.
 \examples{
 # Example with data(harvest)
 
-## Phalanx-formation using a base classifier with 500 trees (default)
+## Phalanx-formation using a base classifier with 50 trees (default = 500)
 \donttest{
 set.seed(761)
 model <- epx(x = harvest[, -4], y = harvest[, 4],
-             classifier.args = list(ntree = 500))
+             classifier.args = list(ntree = 50))
 
 ## Hit curve for model with default settings
 model.hc <- plot(model)

@@ -26,6 +26,7 @@ the corresponding observations must be truly relevant for TOP1 to score 1.
 }
 \examples{
 ## with ties in phat
+\donttest{
 resp <- c(0, rep(1, 99))
 prob <- rep(1, 100)
 TOP1(y = resp, phat = prob)  # expect 0
@@ -41,4 +42,5 @@ TOP1(y = resp, phat = prob)  # expect 0
 
 resp <- c(1, rep(0, 99))
 TOP1(y = resp, phat = prob)  # expect 1
+}
 }

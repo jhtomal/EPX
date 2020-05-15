@@ -27,6 +27,7 @@ relevant, RKL will have a value of \eqn{n}.
 }
 \examples{
 ## without ties in phat
+\donttest{
 resp <- c(rep(1, 50), rep(0, 50))
 prob <- (1:100)*0.01
 RKL(y = resp, phat = prob) # expect 100
@@ -38,4 +39,5 @@ RKL(y = resp, phat = prob) # expect 50
 resp <- sample(c(1, 0), 100, replace = TRUE)
 prob <- rep(1, 100)
 RKL(y = resp, phat = prob) # expect 100
+}
 }

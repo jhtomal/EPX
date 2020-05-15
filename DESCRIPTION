@@ -16,10 +16,10 @@ Description: An ensemble method for the statistical detection of
 License: GPL-3
 Encoding: UTF-8
 LazyData: TRUE
-Depends: R (>= 4.0.0)
-Imports:
+Depends: R (>= 4.0.0),
     foreach,
-    randomForest,
+    randomForest
+Imports:
     nnet,
     doSNOW,
     doRNG,

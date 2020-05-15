@@ -29,6 +29,7 @@ Implementation adapted from Wang (2005, Chapter 3). Please also see Chapter 3
 of Wang (2005) for AHR and expected AHR formulas.
 }
 \examples{
+\donttest{
 ## AHR when there are no ties in phat:
 resp <- c(1, 0, 0, 0, 1)
 prob <- (1:5)*0.1
@@ -41,6 +42,7 @@ prob <- c(1, 1, 1, 0.4, 0.4, 0.3, 0.2, 0.15, 0.1, 0)
 AHR(y = resp, phat = prob)
 # expect answer: 1/3 * (2/3 + 1/2 * (1/3 + 2/3) + 1/3 * 4/3 +
 #                       1/8 * (2/3 + 2/3 + 2/3 + 1))
+}
 }
 \references{
 Wang, M. (2015).

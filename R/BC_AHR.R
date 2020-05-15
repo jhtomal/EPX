@@ -21,6 +21,7 @@
 #' @return Numeric value of average hitrate; expected average hitrate when there
 #'   are ties.
 #' @examples
+#' \donttest{
 #' ## AHR when there are no ties in phat:
 #' resp <- c(1, 0, 0, 0, 1)
 #' prob <- (1:5)*0.1
@@ -33,6 +34,7 @@
 #' AHR(y = resp, phat = prob)
 #' # expect answer: 1/3 * (2/3 + 1/2 * (1/3 + 2/3) + 1/3 * 4/3 +
 #' #                       1/8 * (2/3 + 2/3 + 2/3 + 1))
+#' }
 #' @useDynLib EPX preci
 #' @export
 

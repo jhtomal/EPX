@@ -27,6 +27,7 @@
 #' @return Numeric value of IE.
 #' @examples
 #' ## IE when there are no ties in phat:
+#' \donttest{
 #' resp <- c(1, 1, 0,   0,   0,   0,   0,    1,   0, 0)
 #' prob <- (10:1) * 0.1
 #' IE(y = resp, phat = prob, cutoff = 3)
@@ -36,6 +37,7 @@
 #' resp <- c(1, 1, 0,   0,   0,   0,   0,    1,   0, 0)
 #' prob <- c(1, 1, 1, 0.4, 0.4, 0.3, 0.2, 0.15, 0.1, 0)
 #' IE(y = resp, phat = prob, cutoff = 3)
+#' }
 #' # expect answer: same as above
 #' @export
 IE <- function(y, phat, cutoff = length(y) / 2, ...) {

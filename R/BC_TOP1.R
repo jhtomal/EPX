@@ -13,6 +13,7 @@
 #' @return Numeric value of TOP1.
 #' @examples
 #' ## with ties in phat
+#' \donttest{
 #' resp <- c(0, rep(1, 99))
 #' prob <- rep(1, 100)
 #' TOP1(y = resp, phat = prob)  # expect 0
@@ -28,6 +29,7 @@
 #'
 #' resp <- c(1, rep(0, 99))
 #' TOP1(y = resp, phat = prob)  # expect 1
+#' }
 #' @export
 
 TOP1 <- function(y, phat, ...) {

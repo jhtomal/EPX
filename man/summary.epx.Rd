@@ -23,11 +23,11 @@ algorithm performed by \code{\link{epx}}.
 # Example with data(harvest)
 \donttest{
 
-## Phalanx-formation using a base classifier with 500 trees (default)
+## Phalanx-formation using a base classifier with 50 trees (default = 500)
 
 set.seed(761)
 model <- epx(x = harvest[, -4], y = harvest[, 4],
-            classifier.args = list(ntree = 500))
+            classifier.args = list(ntree = 50))
 summary(model)
 
 ## The summary corresponds with

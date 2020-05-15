@@ -33,16 +33,17 @@
 #' @examples
 #' # Example with data(harvest)
 #'
-#' ## Phalanx-formation using a base classifier with 500 trees (default)
+#' ## Phalanx-formation using a base classifier with 50 trees (default = 500)
 #' \donttest{ 
 #' set.seed(761)
 #' model <- epx(x = harvest[, -4], y = harvest[, 4],
-#'             classifier.args = list(ntree = 500))
+#'             classifier.args = list(ntree = 50))
 #'
 #' ## 10-fold balanced cross-validation (different base classifier settings)
+#' \dontrun{
 #' set.seed(761)
-#' cv.500 <- cv.epx(model, classifier.args = list(ntree = 500))
-#' tail(cv.500) # see performance (here, AHR) for all phalanxes and the ensemble
+#' cv.100 <- cv.epx(model, classifier.args = list(ntree = 100))
+#' tail(cv.100) # see performance (here, AHR) for all phalanxes and the ensemble
 #' 
 #' 
 #' ## Option to output the vector assigning observations to the K folds
@@ -60,6 +61,7 @@
 #'   cv.ahr <- c(cv.ahr, cv.i[nrow(cv.i), ncol(cv.i)])
 #' }
 #' boxplot(cv.ahr)  # to see variation in AHR
+#' }
 #' }
 #' @export
 cv.epx <- function(epx,
