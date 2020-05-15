@@ -9,15 +9,18 @@
 #'   algorithm performed by \code{\link{epx}}.
 #' @examples
 #' # Example with data(harvest)
-#'
+#' \donttest{
+#' 
 #' ## Phalanx-formation using a base classifier with 500 trees (default)
+#' 
 #' set.seed(761)
 #' model <- epx(x = harvest[, -4], y = harvest[, 4],
-#'              classifier.args = list(ntree = 500))
+#'             classifier.args = list(ntree = 500))
 #' summary(model)
 #'
 #' ## The summary corresponds with
 #' (model$PHALANXES)[[4]]
+#' }
 #' @export
 summary.epx <- function(object, ...) {
 
@@ -48,7 +51,6 @@ summary.epx <- function(object, ...) {
     cat("=>", paste((object$PERFORMANCE.ARGS)$performance.measure),
         "is", AHR[i], "\n")
   }
-
 }
 
 

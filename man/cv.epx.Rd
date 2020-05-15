@@ -59,28 +59,31 @@ phalanx-formation algorithm for each fold.
 # Example with data(harvest)
 
 ## Phalanx-formation using a base classifier with 500 trees (default)
+\donttest{ 
 set.seed(761)
 model <- epx(x = harvest[, -4], y = harvest[, 4],
-             classifier.args = list(ntree = 500))
+            classifier.args = list(ntree = 500))
+
 ## 10-fold balanced cross-validation (different base classifier settings)
 set.seed(761)
 cv.500 <- cv.epx(model, classifier.args = list(ntree = 500))
 tail(cv.500) # see performance (here, AHR) for all phalanxes and the ensemble
 
+
 ## Option to output the vector assigning observations to the K folds
 ## (Commented out for speed.)
-# set.seed(761)
-# cv.folds <- cv.epx(model, folds.out = TRUE)
-# tail(cv.folds[[1]])  # same as first example
-# table(cv.folds[[2]])  # number of observations in each of the 10 folds
+set.seed(761)
+cv.folds <- cv.epx(model, folds.out = TRUE)
+tail(cv.folds[[1]])  # same as first example
+table(cv.folds[[2]])  # number of observations in each of the 10 folds
 
 ## 10 runs of 10-fold balanced cross-validation (using default settings)
-## (Commented out for speed.)
-# set.seed(761)
-# cv.ahr <- NULL  # store AHR of each ensemble
-# for (i in 1:10) {
-#   cv.i <- cv.epx(model)
-#   cv.ahr <- c(cv.ahr, cv.i[nrow(cv.i), ncol(cv.i)])
-# }
-# boxplot(cv.ahr)  # to see variation in AHR
+set.seed(761)
+cv.ahr <- NULL  # store AHR of each ensemble
+for (i in 1:10) {
+  cv.i <- cv.epx(model)
+  cv.ahr <- c(cv.ahr, cv.i[nrow(cv.i), ncol(cv.i)])
+}
+boxplot(cv.ahr)  # to see variation in AHR
+}
 }

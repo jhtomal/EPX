@@ -47,14 +47,16 @@ object.
 \examples{
 # Example with data(harvest)
 
-## Phalanx-formation using a base classifier with 150 trees (default is 500)
+## Phalanx-formation using a base classifier with 500 trees (default)
+\donttest{
 set.seed(761)
 model <- epx(x = harvest[, -4], y = harvest[, 4],
-             classifier.args = list(ntree = 150))
+             classifier.args = list(ntree = 500))
 
 ## Plot hit curve for cross-validated predicted probabilities of relevence
 set.seed(761)
 model.cv <- cv.epx(model)
 preds.cv <- model.cv[-nrow(model.cv), ncol(model.cv)]
 cv.hc <- hit.curve(phat = as.numeric(preds.cv), y = model$Y)
+}
 }

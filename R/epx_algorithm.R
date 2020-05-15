@@ -72,7 +72,7 @@ epxAlgorithm <- function(x,
   qmean <- quantile(qsim, prob = 0.50)
   qsim <- quantile(qsim, prob = iquant)
 
-  cat("Phalanx formation is in progress, please wait ……", "\n")
+  cat("Phalanx formation is in progress, please wait", "\n")
 
   # cat("Reference distribution quantiles:", "\n")
   # cat("q", iquant, " = ", qsim, "\n", sep = "")

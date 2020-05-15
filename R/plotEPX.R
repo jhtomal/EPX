@@ -30,6 +30,7 @@
 #' # Example with data(harvest)
 #'
 #' ## Phalanx-formation using a base classifier with 500 trees (default)
+#' \donttest{
 #' set.seed(761)
 #' model <- epx(x = harvest[, -4], y = harvest[, 4],
 #'              classifier.args = list(ntree = 500))
@@ -41,9 +42,10 @@
 #' ## relevant is
 #' model.hc$nhitlast
 #'
-#' ## Hit curve with max.cutoff at 150
+#' ## Hit curve with max.cutoff at 150 (Note: Commented off for time.)
 #' model.hc.150 <- plot(model, max.cutoff = 150)
 #' model.hc.150$nhitlast  # Number of hits in top 150 ranked observations.
+#' }
 #' @export
 plot.epx <- function(x,
                      max.cutoff = min(100, length(x$Y)),

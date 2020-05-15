@@ -16,6 +16,7 @@
 #' # Example with data(harvest)
 #'
 #' ## Phalanx-formation using a base classifier with 500 trees (default)
+#' \donttest{
 #' set.seed(761)
 #' model <- epx(x = harvest[, -4], y = harvest[, 4],
 #'              classifier.args = list(ntree = 500))
@@ -24,12 +25,13 @@
 #' ## returns the object's ENSEMBLED.FITS
 #' all.equal(predict(model), model$ENSEMBLED.FITS)
 #'
-#' ## Predict training values using 500 trees
+#' ## Predict training values using 500 trees (default = 500)
 #' set.seed(761)
 #' preds500 <- predict(model, classifier.args = list(ntree = 500))
 #'
 #' ## Predict test values by passing dataframe of test predictors to newdata as
-#' ## with the predict.lm(.) function etc.
+#' ## with the predict(model, newdata = . ) function etc.
+#' }
 #' @export
 predict.epx <- function(object, newdata,
                         classifier.args = list(),
