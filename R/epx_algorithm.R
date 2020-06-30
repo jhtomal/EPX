@@ -1,5 +1,5 @@
 # Main helper for \link{epx}. For parameter definitions, see \link{epx}
-#' @import doSNOW
+#' @import doParallel
 #' @import rngtools
 #' @import foreach
 #' @import doRNG
@@ -43,21 +43,21 @@ epxAlgorithm <- function(x,
   j <- NULL
 
   ## Console output for classifier and performance specifications ==============
-  cat("Performance measure:", performance, "\n")
-  cat("Performance measure additional arguments:")
+  message("Performance measure: ", performance, "\n")
+  message("Performance measure additional arguments: ")
   if (length(performance.args) == 0) {
-    cat(" none", "\n\n")
+    message(" none", "\n\n")
   } else {
-    cat("\n")
+    message("\n")
     print(performance.args)
   }
 
-  cat("Base classifier:", classifier, "\n")
-  cat("Base classifier arguments specified in phalanx-formation:")
+  message("Base classifier: ", classifier, "\n")
+  message("Base classifier arguments specified in phalanx-formation: ")
   if (length(classifier.args) == 0) {
-    cat(" none", "\n\n")
+    message(" none", "\n\n")
   } else {
-    cat("\n")
+    message("\n")
     print(classifier.args)
   }
 
@@ -72,11 +72,11 @@ epxAlgorithm <- function(x,
   qmean <- quantile(qsim, prob = 0.50)
   qsim <- quantile(qsim, prob = iquant)
 
-  cat("Phalanx formation is in progress, please wait", "\n")
+  message("Phalanx formation is in progress, please wait ", "\n")
 
-  # cat("Reference distribution quantiles:", "\n")
-  # cat("q", iquant, " = ", qsim, "\n", sep = "")
-  # cat("q0.50 =", qmean, "\n\n")
+  message("Reference distribution quantiles: ", "\n")
+  message("q", iquant, " = ", qsim, "\n", sep = "")
+  message("q0.50 = ", qmean, "\n\n")
 
   # STEP 1 INITIAL GROUPING DONE ###############################################
   step1phalanxes <- as.numeric(phalanxes.initial)  # 0 means belongs in no phalanx
@@ -179,10 +179,10 @@ epxAlgorithm <- function(x,
          Consider alternate initial phalanx groupings.")
   }
 
-  # cat("Number of deleted phalanxes after first filtering:",
-  #    num.phalanxes - length(CKEEP),
-  #    "out of",
-  #    num.phalanxes, "\n")
+  message("Number of deleted phalanxes after first filtering: ",
+    num.phalanxes - length(CKEEP),
+    " out of ",
+    num.phalanxes, "\n")
 
   # STEP 2 FILTERING DONE ######################################################
 
@@ -359,15 +359,15 @@ epxAlgorithm <- function(x,
       }
     }
   } else {
-    cat("No final filtering done since only one phalanx left following merging step.", "\n")
+    message("No final filtering done since only one phalanx left following merging step.", "\n")
     CKEEP2 <- max(step3phalanxes)  # only 1 phalanx left, no filtering
     step4phalanxes <- step3phalanxes # hence same as step3phalanxes
   }
 
-  # cat("Number of deleted phalanxes after final filtering:",
-  #    num.phalanxes - length(CKEEP2),
-  #    "out of",
-  #    num.phalanxes, "\n\n")
+  message("Number of deleted phalanxes after final filtering: ",
+    num.phalanxes - length(CKEEP2),
+    " out of ",
+    num.phalanxes, "\n\n")
 
   # end of final filtering
 

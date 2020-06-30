@@ -107,29 +107,27 @@ which forms the emsemble. Typically performance will then be assessed with
 \examples{
 # Example with data(harvest)
 
-## Phalanx-formation using a base classifier with 50 trees (default = 500)
-\donttest{
+## Phalanx-formation using a base classifier with 500 trees (default)
 set.seed(761)
 model <- epx(x = harvest[, -4], y = harvest[, 4],
-             classifier.args = list(ntree = 50))
+             classifier.args = list(ntree = 500))
 
 ## See how phalanx-membership of variables at all four steps
 ## (0 means not in a phalanx.)
-model$PHALANXES
+(model$PHALANXES)
 
 ## Summary of how predictors divided into the final phalanxes (matches above)
 summary(model)
-\dontrun{
+
 ## Parallel computing
-clusters <- parallel::detectCores()
-cl <- parallel::makeCluster(clusters)
-doSNOW::registerDoSNOW(cl)
-set.seed(761)
-model.par <- epx(x = harvest[, -4], y = harvest[, 4],
-                 computing = "parallel")
-parallel::stopCluster(cl)
-}
-}
+## (Commented out for speed.)
+# clusters <- parallel::detectCores()
+# cl <- parallel::makeCluster(clusters)
+# doParallel::registerDoParallel(cl)
+# set.seed(761)
+# model.par <- epx(x = harvest[, -4], y = harvest[, 4],
+#                  computing = "parallel")
+# parallel::stopCluster(cl)
 }
 \references{
 Tomal, J. H., Welch, W. J., & Zamar, R. H. (2015).

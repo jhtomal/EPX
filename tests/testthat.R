@@ -1,4 +1,4 @@
 library(testthat)
-library(epx)
+library(EPX)
 
-test_check("epx")
+test_check("EPX")

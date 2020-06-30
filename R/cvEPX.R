@@ -90,23 +90,23 @@ cv.epx <- function(epx,
 
   ## clarifying what arguments used for the base classifier in predict
   ## vs. what was specified when creating the epx object
-  cat("Base classifier:", (epx$BASE.CLASSIFIER.ARGS)[[1]], "\n")
+  message("Base classifier: ", (epx$BASE.CLASSIFIER.ARGS)[[1]], "\n")
 
   epx.classifier.args <- (epx$BASE.CLASSIFIER.ARGS)[[2]]
-  cat("Base classifier arguments specified in phalanx-formation:")
+  message("Base classifier arguments specified in phalanx-formation: ")
   if (length(epx.classifier.args) == 0) {  # no user args in epx
-    cat(" none", "\n")
+    message(" none", "\n")
   } else {  # there are user args in epx
-    cat("\n")
+    message("\n")
     print(epx.classifier.args)
   }
 
-  cat("Base classifier arguments specified in balanced")
-  cat(" ", K, "-fold cross-validation:", sep = "")
+  message("Base classifier arguments specified in balanced ")
+  message(" ", K, "-fold cross-validation: ", sep = "")
   if (length(classifier.args) == 0) {  # no user args from cv
-    cat(" none", "\n")
+    message(" none", "\n")
   } else {  # there are user args in cv
-    cat("\n")
+    message("\n")
     print(classifier.args)
   }
 

@@ -1,7 +1,6 @@
 # Helpers used by the package.
 #' @import graphics
 #' @import stats
-#' @import foreach
 
 ################################################################################
 # .ClassifierFormula ###########################################################

@@ -17,7 +17,7 @@ BNhold
 \description{
 AID348 test dataset with 24 burden numbers as explanatory variables.
 Demonstrates in a timely manner \code{\link{epx}}, the phalanx-formation
-algorithm in \pkg{epx} and associated functions \code{\link{summary.epx}},
+algorithm in \pkg{EPX} and associated functions \code{\link{summary.epx}},
 \code{\link{predict.epx}} , \code{\link{plot.epx}}, \code{\link{cv.epx}},
 \code{\link{hit.curve}}.
 }

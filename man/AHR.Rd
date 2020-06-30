@@ -45,8 +45,9 @@ AHR(y = resp, phat = prob)
 }
 }
 \references{
-Wang, M. (2015).
-\emph{Statistical Methods for High Throughput Screening Drug Discovery Data}.
-University of Waterloo.
+Wang, M. (2005).
+\emph{Statistical Methods for High Throughput Screening Drug Discovery Data}
+(Doctoral thesis).
+University of Waterloo, Waterloo, Ontario, Canada.
 Retrieved from \url{http://etd.uwaterloo.ca/etd/y32wang2005.pdf}
 }
